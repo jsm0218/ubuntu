@@ -40,7 +40,7 @@ CircleManager::CircleManager (int size) {
 	p = new Circle[size];
 	this->size = size;
 	for (int i=0; i<size; i++) {
-		cout << "Circle " << i+1 << " Name & Radius >> ";
+		cout << "원 " << i+1 << "의 이름과 반지름 >> ";
 		cin >> name >> radius;
 		p[i].setCircle(name, radius);
 	}
@@ -51,29 +51,29 @@ CircleManager::~CircleManager() {
 }
 
 void CircleManager::searchByName() {
-	cout << "Search Circle Name >> ";
+	cout << "원의 이름 검색  >> ";
 	cin >> name;
 	for (int i=0; i<size; i++) {
 		if (name == p[i].getName()) {
-			cout << name << " area = " << p[i].getArea() << endl;
+			cout << name << "의 넓이 = " << p[i].getArea() << endl;
 		}
 	}
 }
 
 void CircleManager::searchByArea() {
-	cout << "Enter Min Area >> ";
+	cout << "최소 넓이 >> ";
 	cin >> radius;
-	cout << "Search for a Circle greater than " << radius << endl;
+	//cout << radius << endl;
 	for (int i=0; i<size; i++) {
 		if (radius < p[i].getArea()) {
-			cout << p[i].getName() << " Area = " << p[i].getArea() << endl;
+			cout << p[i].getName() << "의 넓이 = " << p[i].getArea() << endl;
 		}
 	}
 }
 
 int main() {
 	int size;
-	cout << "the number of Circles >> ";
+	cout << "원의 개수 >> ";
 	cin >> size;
 	CircleManager CM(size);
 	CM.searchByName();
